@@ -8,6 +8,44 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 ```bash
 ng new router-app
 ```
+* Create navbar component
+```bash
+ng g c navbar --skip-tests
+```
+* Import new component in app component
+**app.component.html**
+```html
+<div class="content">
+    <app-navbar/>
+</div>
+```
+
+**app.component.ts**
+```ts
+import { TodoListComponent } from "./todo-list/todo-list.component";
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, TodoListComponent],
+  ...
+```
+* Create pages component
+```bash
+ng g c pages/about --skip-tests
+ng g c pages/home --skip-tests
+ng g c pages/not-found --skip-tests
+```
+* Verify configuration
+main.ts call appConfig
+app.config.ts provides routes
+app.routes.ts declare a Routes array
+
+* Update navbar template
+**index.html**
+Add bootstrap css
+
+**navbar/navbar.components.html**
+Add bootstrap HTML template
 
 ## Development server
 
