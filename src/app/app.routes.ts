@@ -24,6 +24,13 @@ export const routes: Routes = [
         path: 'products/:productId',
         component: ProductItemComponent,
     },
+    // utiliser cette route avec children pour faire apparaitre le composant enfant dans le composant parent (et pas de changement de page)
+    // il est nécessaire d'ajouter <router-outlet /> dans le composant parent, là ou on veut afficher le composant enfant
+    // {
+    //     path: 'products',
+    //     component: ProductsComponent,
+    //     children: productsRoute,
+    // },
     {
         path: '**',
         component: NotFoundComponent

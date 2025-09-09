@@ -7,7 +7,7 @@ export const routes: Routes = [
         pathMatch: 'prefix'
     },    
     {
-        path: ':id',
+        path: ':productId',
         component:ProductItemComponent
     },    
 ]
