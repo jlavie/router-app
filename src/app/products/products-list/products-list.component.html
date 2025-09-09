@@ -2,7 +2,7 @@
     
     @for (product of products; track product.id) {
       <li>
-        <a href="/products/{{ product.id }}">{{ product.title }}</a>
+        <a routerLink="/products/{{ product.id }}">{{ product.title }}</a>
       </li>
     }
 </ul>
