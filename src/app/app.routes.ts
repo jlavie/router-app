@@ -5,6 +5,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 import { routes as productsRoute } from './products/products.routes'
 import { ProductItemComponent } from './products/product-item/product-item.component';
+import { ProductFormComponent } from './products/product-form/product-form.component';
 
 export const routes: Routes = [
     {
@@ -23,6 +24,11 @@ export const routes: Routes = [
     {
         path: 'products/:productId',
         component: ProductItemComponent,
+        children: [
+            {
+                path: 'update',
+                component:ProductFormComponent
+            },            ]
     },
     // utiliser cette route avec children pour faire apparaitre le composant enfant dans le composant parent (et pas de changement de page)
     // il est nécessaire d'ajouter <router-outlet /> dans le composant parent, là ou on veut afficher le composant enfant
