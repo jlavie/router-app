@@ -4,6 +4,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 import { routes as productsRoute } from './products/products.routes'
+import { ProductItemComponent } from './products/product-item/product-item.component';
 
 export const routes: Routes = [
     {
@@ -18,7 +19,10 @@ export const routes: Routes = [
     {
         path: 'products',
         component: ProductsComponent,
-        children: productsRoute,
+    },
+    {
+        path: 'products/:productId',
+        component: ProductItemComponent,
     },
     {
         path: '**',

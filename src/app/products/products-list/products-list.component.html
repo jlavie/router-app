@@ -1,6 +1,6 @@
 <ul id="products">
     
-    @for (product of products; track product.id) {
+    @for (product of products(); track product.id) {
       <li>
         <a routerLink="/products/{{ product.id }}">{{ product.title }}</a>
       </li>

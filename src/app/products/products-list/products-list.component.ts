@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { RouterLink } from "@angular/router";
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-products-list',
@@ -8,5 +9,7 @@ import { RouterLink } from "@angular/router";
   styleUrl: './products-list.component.scss'
 })
 export class ProductsListComponent {
-  @Input() products:any;
+  private productsService = inject(ProductsService)
+
+  products = computed(() => this.productsService.products)
 }
