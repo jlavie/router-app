@@ -3,4 +3,17 @@
 <a class="button" routerLink="update">Modifier</a>
 
 {{ product()?.title }}
+<div class="products-navigation">
+    <button 
+    [disabled]="!previousProductId()"
+    (click)="navigateToProduct(previousProductId())">
+    Produit précédent
+  </button>
+  
+  <button 
+    [disabled]="!nextProductId()"
+    (click)="navigateToProduct(nextProductId())">
+    Produit suivant
+  </button>
+</div>
 <router-outlet />
