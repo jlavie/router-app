@@ -2,6 +2,11 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.2.
 
+Ce projet traitera uniquement ce qui concerne le routing sur Angular. 
+Ce projet sera une boutique fictive qui aura plusieurs parties, afin de faire le tour sur tous les aspects du routing 
+  * Une partie publique : accueil, liste des produits, détails d’un produit, passage d'un produit à l'autre.
+  * Une partie privée (admin) : gestion des produits.
+
 ## Development steps
 
 * Init project
@@ -22,17 +27,17 @@ ng g c navbar --skip-tests
 
 **app.component.ts**
 ```ts
-import { TodoListComponent } from "./todo-list/todo-list.component";
+import { NavbarComponent } from "./navbar/navbar.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TodoListComponent],
+  imports: [RouterOutlet, NavbarComponent],
   ...
 ```
 * Create pages component
 ```bash
-ng g c pages/about --skip-tests
 ng g c pages/home --skip-tests
+ng g c pages/products --skip-tests
 ng g c pages/not-found --skip-tests
 ```
 * Verify configuration
