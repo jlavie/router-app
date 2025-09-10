@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter, withComponentInputBinding, withRouterConfig } from '@angular/router';
+import { PreloadAllModules, provideRouter, withComponentInputBinding, withPreloading, withRouterConfig } from '@angular/router';
 
 import { routes } from './app.routes';
 
@@ -10,7 +10,8 @@ export const appConfig: ApplicationConfig = {
       withComponentInputBinding(),
       withRouterConfig({
         paramsInheritanceStrategy: 'always'
-      })
+      }),
+      withPreloading(PreloadAllModules)
     )]
   // withComponentInputBinding() permet de pouvoir utiliser et utiliser un paramètre dynamique dans la route pour faire une requete
   // si :productId est utilisé dans la route, il faut utiliser productId également dans le composant
