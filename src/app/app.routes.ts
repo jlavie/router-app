@@ -4,8 +4,10 @@ import { ProductsComponent } from './pages/products/products.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 import { routes as productsRoute } from './products/products.routes'
+import { routes as adminRoute } from './pages/admin/admin.routes';
 import { ProductItemComponent } from './products/product-item/product-item.component';
 import { ProductFormComponent } from './products/product-form/product-form.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 export const routes: Routes = [
     {
@@ -37,6 +39,11 @@ export const routes: Routes = [
     //     component: ProductsComponent,
     //     children: productsRoute,
     // },
+    {
+        path: 'admin',
+        component: AdminComponent,
+        children: adminRoute,
+    },
     {
         path: '**',
         component: NotFoundComponent
