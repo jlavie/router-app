@@ -8,6 +8,7 @@ import { routes as adminRoute } from './pages/admin/admin.routes';
 import { ProductItemComponent } from './products/product-item/product-item.component';
 import { ProductFormComponent } from './products/product-form/product-form.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
     {
@@ -43,6 +44,7 @@ export const routes: Routes = [
         path: 'admin',
         component: AdminComponent,
         children: adminRoute,
+        canActivate: [AuthGuard]
     },
     {
         path: '**',
