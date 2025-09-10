@@ -40,12 +40,20 @@ export const routes: Routes = [
     //     component: ProductsComponent,
     //     children: productsRoute,
     // },
+
+    // Suppression pour passer en lazy loading
+    // {
+    //     path: 'admin',
+    //     component: AdminComponent,
+    //     children: adminRoute,
+    //     canActivate: [AuthGuard]
+    // },
     {
         path: 'admin',
-        component: AdminComponent,
-        children: adminRoute,
-        canActivate: [AuthGuard]
-    },
+        canActivate: [AuthGuard],
+        loadChildren: () =>
+          import('./pages/admin/admin.routes').then(m => m.routes)
+      },
     {
         path: '**',
         component: NotFoundComponent
