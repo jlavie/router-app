@@ -18,11 +18,13 @@ export const routes: Routes = [
     },
     {
         path: 'home',
-        component:HomeComponent
+        component:HomeComponent,
+        data: { animation: 'HomePage' }
     },
     {
         path: 'products',
         component: ProductsComponent,
+        data: { animation: 'ProductPage' }
     },
     {
         path: 'products/:productId',
@@ -51,9 +53,9 @@ export const routes: Routes = [
     {
         path: 'admin',
         canActivate: [AuthGuard],
-        loadChildren: () =>
-          import('./pages/admin/admin.routes').then(m => m.routes)
-      },
+        loadChildren: () => import('./pages/admin/admin.routes').then(m => m.routes), 
+        data: { animation: 'AdminPage' }
+    },
     {
         path: '**',
         component: NotFoundComponent
